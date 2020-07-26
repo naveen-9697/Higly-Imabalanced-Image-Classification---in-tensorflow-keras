@@ -9,3 +9,9 @@
     c. Average <b>Precision</b> and <b>Recall</b> has also been calculated.  
 3. Becuase of the imbalance in the data, additonal class weights have been supplied to let the algorithm give extra weight to under-sampled classes.  
 4. Xception with weights of 'imagenet' has been adopted without including top layers. At final layers, two additional fully connected layers with dropout of 0.5 has been added.
+
+## Data:
+Complete data(7.91GB), with around 45,000 images of 15 different fruits can be <a href=https://www.kaggle.com/chrisfilo/fruit-recognition>found on kaggle</a>.
+
+## Saved Models:
+Download saved models from my kaggle page of same notebook <a href=https://www.kaggle.com/naveen9697/imbalanced-classification-on-fruits/output>here</a>.
