@@ -2,7 +2,7 @@
 
 ## About the notebook:
 
-1. Data was imabalanced, so splits with equal proportions of all classes has to be included in train and test.
+1. Data was imabalanced, so splits with equal proportions of all classes has to be included in train and validation.
 2. Data was imabalanced, so multiple weighted evaluation metrics has to be chosen. I have calculated:  
     a. <u>Primary evaluation metric</u>: <i>Weighted harmonic mean</i> using <a href='https://www.tensorflow.org/addons/api_docs/python/tfa/metrics/FBetaScore'><i>F-beta score</i></a>, that gives equal weights to all classes(with average='macro') has been used.  
     b. Accuracy using <a href='https://www.tensorflow.org/api_docs/python/tf/keras/metrics/CategoricalAccuracy'><i>CategoricalAccuracy</i></a>  
