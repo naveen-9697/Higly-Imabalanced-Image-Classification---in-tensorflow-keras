@@ -1,16 +1,24 @@
 # Imabalanced-classification-in-keras-for-15-classes
 
+## What:
+This is me practicing how to tackle a imbalanced multi-class image classification problem and this is about classifying 45,000 images of 15 different fruits.
+
 ## About:
-This is an imbalanced multi-class classification problem.
+<ol>
+    <li>data can be found <a href=https://www.kaggle.com/chrisfilo/fruit-recognition>here on Kaggle</a>.</li>
+    <!--
+    <li></li>
+    <li>Multi-Logloss was used as loss.</li>
+    -->
+    <li>How was the imbalance handled/tackled:</li>
+    <ol>
+        <li>I didn't get more data, albeit lots of images of fruits being available on the internet, to avoid input shift.</li>
+        <li>I have augmented the images at every epoch, to ensure that the model has seen every various variations of every input image. e.g.: from various angles.</li>
+        <li>By setting class weights, in other words, telling algorithm to pay extra attention to under represented classes.</li>
+        <li>For proper judgement, stratified splits with equal proportions of images belonging to all classes were included in train, validation and test sets.</li>
+        <liUsing an evaluation metric like Weighted harmonic mean, to judge the model's output better. And I have also used Recall to be extra sure.></li>
+    </ol>
+</ol>
 
 ## Data:
 45,000 images of 15 different fruits can be <a href=https://www.kaggle.com/chrisfilo/fruit-recognition>found on kaggle</a>.
-
-## About:
-1. Data was imbalanced, so stratified splits with equal proportions of all classes has to be included in train and validation.
-2. Multi-Logloss was used as loss.
-3. Data was imbalanced, so multiple evaluation metrics had to be chosen. In the notebook, I have calculated:  
-    a. <u>Primary evaluation metric</u>: <i>Weighted harmonic mean</i> using <a href='https://www.tensorflow.org/addons/api_docs/python/tfa/metrics/FBetaScore'><i>F-beta score</i></a>, that gives equal weights to all classes(with average='macro') has been used.  
-    b. Accuracy using <a href='https://www.tensorflow.org/api_docs/python/tf/keras/metrics/CategoricalAccuracy'><i>CategoricalAccuracy</i></a>  
-    c. Average <b>Precision</b> and <b>Recall</b> has also been calculated.  
-4. To not have the weights of CNNs update for oversampled classes, additonal class weights have been supplied to let the algorithm give extra weight to under-sampled classes, which actually gave very good results.
